@@ -195,6 +195,36 @@ a {
     .section.about h1 {
       font-size: 55px;
       margin: 0; }
+  .section.work .row {
+    width: 100%; }
+    .section.work .row:before, .section.work .row:after {
+      content: "";
+      display: table; }
+    .section.work .row:after {
+      clear: both; }
+    .section.work .row .col-1-2 {
+      width: 50%;
+      height: 50vh;
+      text-decoration: none;
+      float: left;
+      padding: 10px; }
+      .section.work .row .col-1-2 .card {
+        background: #333333;
+        background-size: cover;
+        color: white;
+        text-align: left;
+        padding: 10px;
+        height: 100%;
+        transition: 0.15s ease-in-out; }
+        .section.work .row .col-1-2 .card:hover {
+          transform: scale(0.9); }
+        .section.work .row .col-1-2 .card.sob {
+          background: #333333 url("https://s3-us-west-2.amazonaws.com/samueljanes.s3.amazonaws.com/posts/images/000/000/005/original/sobbg.png") no-repeat bottom right; }
+        .section.work .row .col-1-2 .card.em {
+          background: #333 url("https://s3-us-west-2.amazonaws.com/samueljanes.s3.amazonaws.com/posts/images/000/000/005/original/EH.png") no-repeat bottom right; }
+      @media (max-width: 640px) {
+        .section.work .row .col-1-2 {
+          width: 100%; } }
 
 .footer {
   text-align: center; }

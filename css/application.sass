@@ -203,6 +203,37 @@ a
     h1
       font-size: 55px
       margin: 0
+  &.work
+    .row
+      width: 100%
+      &:before,
+      &:after
+        content: ''
+        display: table
+      &:after
+        clear: both
+      .col-1-2
+        width: 50%
+        height: 50vh
+        text-decoration: none
+        float: left
+        padding: 10px
+        .card
+          background: #333333
+          background-size: cover
+          color: white
+          text-align: left
+          padding: 10px
+          height: 100%
+          transition: .15s ease-in-out
+          &:hover
+            transform: scale(0.9)
+          &.sob
+            background: #333333 url("https://s3-us-west-2.amazonaws.com/samueljanes.s3.amazonaws.com/posts/images/000/000/005/original/sobbg.png") no-repeat bottom right
+          &.em
+            background: #333 url("https://s3-us-west-2.amazonaws.com/samueljanes.s3.amazonaws.com/posts/images/000/000/005/original/EH.png") no-repeat bottom right
+        @media (max-width: 640px)
+          width: 100%
 
 .footer
   text-align: center
