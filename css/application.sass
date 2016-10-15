@@ -1,0 +1,212 @@
+$dark: #16385E
+
+*
+  box-sizing: border-box
+
+
+body
+  background: #333
+  overflow: hidden
+  font-family: 'Raleway', sans-serif
+a
+  color: $dark
+  text-decoration: none
+  font-weight: 700
+  transition: all .15s ease-in-out
+  &:hover
+    color: lighten($dark, 35%)
+
+.logo
+  font-size: 75px
+  transition: all .15s ease-in-out
+  margin: 0
+  &:hover
+    color: lighten($dark, 35%)
+    span
+      color: white
+  span
+    color: lighten($dark, 35%)
+
+
+
+
+.face
+  width: 250px
+  height: 250px
+  background: url("../img/face.jpg") no-repeat center
+  background-size: contain
+  border: 5px solid $dark
+  border-radius: 50%
+  &.center
+    margin: 0 auto
+
+.wrapper
+  width: 100%
+  max-widtH: 1200px
+  padding: 20px
+  margin: auto
+  &.no-padding
+    padding: 0
+
+.content
+  height: 100vh
+  background: white
+  position: absolute
+  top: 0
+  left: 0
+  width: 100vw
+  transition: all .35s ease-in-out
+  overflow: auto
+  &.open
+    transform: scale(0.25)
+    left: 112.5px
+    @media (max-width: 640px)
+      left: 87.5px
+
+
+.hamburger
+  width: 50px
+  height: 50px
+  position: fixed
+  top: 10px
+  left: 20px
+  transition: all .35s ease-in-out
+  background: $dark
+  z-index: 1000
+  span
+    content: ''
+    transition: all .35s ease-in-out
+    position: absolute
+    width: 30px
+    height: 5px
+    background: white
+    left: 50%
+    transform: translate(-50%, -0%)
+    &:nth-child(1)
+      top: 12.5px
+    &:nth-child(2)
+      top: 22.5px
+    &:nth-child(3)
+      top: 32.5px
+
+  &.open
+    left: 245px
+    @media (max-width: 640px)
+      left: 195px
+    span
+      &:nth-child(1)
+        top: 50%
+        transform: translate(-50%, -50%) rotate(45deg)
+      &:nth-child(2)
+        opacity: 0
+      &:nth-child(3)
+        top: 50%
+        transform: translate(-50%, -50%) rotate(-45deg)
+
+
+
+
+.side-bar
+  position: fixed
+  top: 0
+  left: -225px
+  width: 225px
+  height: 100vh
+  overflow-x: hidden
+  overflow-y: auto
+  background: $dark
+  color: white
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  align-items: center
+  padding: 30px 0
+  transition: all .35s ease-in-out
+  z-index: 1001
+  a
+    color: white
+    text-decoration: none
+    &:hover
+      color: lighten($dark, 35%)
+  @media (max-width: 640px)
+    width: 175px
+  &.open
+    left: 0
+  ul
+    list-style: none
+    padding: 0
+    li
+      padding: 15px 0
+      a
+        transition: all .15s ease-in-out
+        font-weight: 700
+        &.active
+          color: lighten($dark, 35%)
+
+.section
+  width: 100%
+  padding: 20px
+  &.padded-more
+    padding: 80px 20px
+  &.padded-more-top-only
+    padding: 80px 20px 20px 20px
+  &.no-padding
+    padding: 0
+  &.center--text
+    text-align: center
+  &.flex
+    display: flex
+    &.column
+      flex-direction: column
+    &.center--items
+      justify-content: center
+    &.right--items
+      justify-content: flex-end
+    &.vertiz--align
+      align-items: center
+  &.hero
+    color: white
+    background: url("https://hd.unsplash.com/photo-1461749280684-dccba630e2f6") no-repeat center
+    background-size: cover
+    min-height: 100vh
+  &.about
+    color: $dark
+    .skills
+      width: 100%
+      .skill-bar
+        width: 100%
+        height: 40px
+        position: relative
+        background: #fff
+        padding: 0 10px
+        margin: 10px 0
+        color: white
+        p.percent
+          text-align: right
+          margin: 0
+          line-height: 40px
+          color: $dark
+          font-weight: 700
+        .skill-bar-inner
+          width: auto
+          height: 40px
+          position: absolute
+          left: 0
+          top: 0
+          background: $dark
+          text-align: left
+          padding: 0 20px
+          opacity: 0.85
+          p
+            margin: 0
+            line-height: 40px
+    h1
+      font-size: 55px
+      margin: 0
+
+.footer
+  text-align: center
+  .social
+    font-size: 30px
+  p
+    font-size: 12px

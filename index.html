@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Samuel Janes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://codepen.io/assets/reset/normalize.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/application.css" />
+</head>
+<body>
+
+<div class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<div class="side-bar">
+    <h1 class="logo" >S<span>J</span></h1>
+    <ul class="links" >
+        <li><a href="index.html" class="active" >Home</a></li>
+        <li><a href="work.html">Work</a></li>
+    </ul>
+    <div class="footer">
+        <a href="mailto:samuel.janes@icloud.com">Email Me</a>
+        <div class="social">
+            <a href="https://twitter.com/SamuelOJanes" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/samuelojanes/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://github.com/SamuelOJanes" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+            <a href="http://codepen.io/SamuelJanes/" target="_blank"><i class="fa fa-codepen" aria-hidden="true"></i></a>
+        </div>
+        <p >&copy; Samuel Janes 2016</p>
+    </div>
+</div>
+
+<div class="content" id="content">
+    <div id="content-wrapper">
+        <div class="section center--text flex center--items vertiz--align column hero">
+            <h1>Samuel Janes</h1>
+            <p>Front-end And Back-end Web Developer</p>
+        </div>
+        <div class="section center--text flex center--items column about" id="about">
+            <div class="wrapper no-padding">
+                <div class="face center"></div>
+                <h1>About Me:</h1>
+                <p>
+                    Hello! I'm Samuel! I'm a Designer and Developer from Texas. I, well, Design and Develop stuff. I also play various instruments and nerd out over graphics cards and processors. Here are some of my skills:
+                </p>
+                <div class="skills">
+                    <div class="skill-bar" id="html" width-end="80%">
+                        <div class="skill-bar-inner">
+                            <p>HTML</p>
+                        </div>
+                        <p class="percent">80%</p>
+                    </div>
+                    <div class="skill-bar" id="css" width-end="75%">
+                        <div class="skill-bar-inner">
+                            <p>CSS</p>
+                        </div>
+                        <p class="percent">75%</p>
+                    </div>
+                    <div class="skill-bar" id="js" width-end="70%">
+                        <div class="skill-bar-inner">
+                            <p>JS</p>
+                        </div>
+                        <p class="percent">70%</p>
+                    </div>
+                    <div class="skill-bar" id="design" width-end="75%">
+                        <div class="skill-bar-inner">
+                            <p>DESIGN</p>
+                        </div>
+                        <p class="percent">75%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<script>
+
+
+    $(".content").scroll( function(){
+        var windowScroll = $(".content").scrollTop();
+        var aboutOffset = $("#about").offset().top;
+
+        if(windowScroll > aboutOffset ){
+            var SkillsBar = $(".skills").find(".skill-bar");
+
+            $(SkillsBar).each( function(i){
+                var widthEnd = $(this).attr("width-end");
+                var skillBarInner  = $(this).find(".skill-bar-inner");
+                setTimeout( function(){
+                    $(skillBarInner).animate({
+                        width: widthEnd,
+                        opacity: '1'
+                    }, 2500)
+                }, 250 * i);
+            });
+
+        }
+
+    });
+
+    $(".hamburger").on('click', function(){
+        if(! $(".hamburger").hasClass("open")){
+            $(".content").first().addClass("open");
+            setTimeout( function(){
+                $(".hamburger").addClass("open");
+                $(".side-bar").addClass("open");
+            }, 350);
+        }else if($(".hamburger").hasClass("open")){
+            $(".hamburger").removeClass("open");
+            $(".side-bar").removeClass("open");
+            setTimeout( function(){
+                $(".content").first().removeClass("open");
+            }, 350);
+        }
+    });
+
+    $("ul.links li a").on('click', function(e){
+       e.preventDefault();
+       var Target = $(this).attr("href");
+
+       if(! $(this).hasClass("active")){
+           if(Target.length){
+
+               $("ul.links li a").removeClass("active");
+               $(this).addClass("active");
+
+               $(".hamburger").removeClass("open");
+               $(".side-bar").removeClass("open");
+               $(".content").removeClass("last-open");
+               setTimeout( function(){
+                   $(".content").removeClass("open");
+               }, 350);
+
+               setTimeout( function(){
+                   $(".content").find("#content-wrapper").fadeOut(350, function(){
+                       $("#content-wrapper").remove();
+                       $(".content").load(Target + ' #content-wrapper').hide().css('opacity', '1').show();
+                       console.log(Target + '#content-wrapper');
+                   });
+               }, 700);
+
+           }
+       }
+
+
+
+
+
+    });
+
+</script>
+</body>
+</html>
