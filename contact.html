@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Samuel Janes | Work</title>
+    <title>Samuel Janes | Contact</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <link rel="stylesheet" href="http://codepen.io/assets/reset/normalize.css" />
@@ -22,32 +22,31 @@
     <h1 class="logo" >S<span>J</span></h1>
     <ul class="links" >
         <li><a href="index.html" >Home</a></li>
-        <li><a href="work.html" class="active" >Work</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="contact.html" class="active" >Contact</a></li>
     </ul>
     <a href="mailto:samuel.janes@icloud.com">Email Me</a>
 </div>
 
 <div class="content" id="content">
     <div id="content-wrapper">
-        <div class="section no-padding center--text flex center--items vertiz-align column work ">
-            <h1>Stuff I've Done:</h1>
-            <div class="row">
-                <div class="col-1-2">
-                    <a href="http://www.scottsoysterbar.co" target="_blank" >
-                        <div class="card sob">
-                            <h1>Scotts Oyster Bar</h1>
-                            <p>Logo, Menu, Website</p>
-                        </div>
-                    </a>
+        <div class="section no-padding center--text flex center--items vertiz-align column contact-form ">
+            <h1>Contact Me</h1>
+            <form method="POST" action="http://formspree.io/samuel.janes@icloud.com">
+                <div class="field">
+                    <label for="email">Your Email</label><br />
+                    <input type="email" name="email" id="email">
                 </div>
-                <div class="col-1-2">
-                    <div class="card em">
-                        <h1>Emotional Hardbody</h1>
-                        <p>Coming Soon</p>
-                    </div>
+                <div class="field">
+                    <label for="name">Your full name</label>
+                    <input type="text" name="name" id="name">
                 </div>
-            </div>
+                <div class="field">
+                    <label for="message">Your Message</label>
+                    <textarea name="message" id="message"></textarea>
+                </div>
+                <button type="submit">Send</button>
+            </form>
         </div>
     </div>
 

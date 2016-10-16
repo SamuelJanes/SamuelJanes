@@ -67,7 +67,8 @@ a {
   left: 20px;
   transition: all 0.35s ease-in-out;
   background: #16385E;
-  z-index: 1000; }
+  z-index: 1000;
+  border: 2px solid white; }
   .hamburger span {
     content: "";
     transition: all 0.35s ease-in-out;
@@ -78,11 +79,11 @@ a {
     left: 50%;
     transform: translate(-50%, 0%); }
     .hamburger span:nth-child(1) {
-      top: 12.5px; }
+      top: 10px; }
     .hamburger span:nth-child(2) {
-      top: 22.5px; }
+      top: 20px; }
     .hamburger span:nth-child(3) {
-      top: 32.5px; }
+      top: 30px; }
   .hamburger.open {
     left: 245px; }
     @media (max-width: 640px) {
@@ -160,9 +161,15 @@ a {
     color: white;
     background: url("https://hd.unsplash.com/photo-1461749280684-dccba630e2f6") no-repeat center;
     background-size: cover;
-    min-height: 100vh; }
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden; }
+    .section.hero h1 {
+      font-size: 65px;
+      margin: 0; }
   .section.about {
-    color: #16385E; }
+    color: #16385E;
+    min-height: 100vh; }
     .section.about .skills {
       width: 100%; }
       .section.about .skills .skill-bar {
@@ -227,6 +234,52 @@ a {
       @media (max-width: 640px) {
         .section.work .row .col-1-2 {
           width: 100%; } }
+  .section.contact-form {
+    min-heighT: 100vh;
+    background: #16385E;
+    color: white; }
+    .section.contact-form form {
+      padding: 20px;
+      width: 100%;
+      max-width: 960px;
+      text-align: left; }
+      .section.contact-form form button {
+        padding: 10px 40px;
+        color: white;
+        border: 2px solid white;
+        background: none;
+        outline: 0;
+        transition: 0.15s ease-in-out;
+        font-weight: 700; }
+        .section.contact-form form button:hover {
+          background: white;
+          color: #16385E; }
+      .section.contact-form form .field {
+        width: 100%; }
+        .section.contact-form form .field input[type='text'],
+        .section.contact-form form .field input[type='email'] {
+          width: 100%;
+          padding: 10px 5px;
+          outline: none;
+          border: 2px solid #8eb7e5;
+          display: block;
+          float: left;
+          transition: 0.15s ease-in-out;
+          margin: 10px 0; }
+          .section.contact-form form .field input[type='text']:focus,
+          .section.contact-form form .field input[type='email']:focus {
+            background: #f3f3f3; }
+      .section.contact-form form textarea {
+        width: 100%;
+        max-width: 100%;
+        min-height: 300px;
+        outline: none;
+        border: 2px solid #8eb7e5;
+        padding: 10px 5px;
+        transition: 0.15s ease-in-out;
+        margin: 10px 0; }
+        .section.contact-form form textarea:focus {
+          background: #f3f3f3; }
 
 .footer {
   text-align: center; }

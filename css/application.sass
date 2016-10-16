@@ -47,6 +47,7 @@ a
   margin: auto
   &.no-padding
     padding: 0
+  &.hero-wrapper
 
 .content
   height: 100vh
@@ -73,6 +74,7 @@ a
   transition: all .35s ease-in-out
   background: $dark
   z-index: 1000
+  border: 2px solid white
   span
     content: ''
     transition: all .35s ease-in-out
@@ -83,11 +85,11 @@ a
     left: 50%
     transform: translate(-50%, -0%)
     &:nth-child(1)
-      top: 12.5px
+      top: 10px
     &:nth-child(2)
-      top: 22.5px
+      top: 20px
     &:nth-child(3)
-      top: 32.5px
+      top: 30px
 
   &.open
     left: 245px
@@ -169,8 +171,14 @@ a
     background: url("https://hd.unsplash.com/photo-1461749280684-dccba630e2f6") no-repeat center
     background-size: cover
     min-height: 100vh
+    position: relative
+    overflow: hidden
+    h1
+      font-size: 65px
+      margin: 0
   &.about
     color: $dark
+    min-height: 100vh
     .skills
       width: 100%
       .skill-bar
@@ -236,6 +244,51 @@ a
             background: #333 url("https://s3-us-west-2.amazonaws.com/samueljanes.s3.amazonaws.com/posts/images/000/000/005/original/EH.png") no-repeat bottom right
         @media (max-width: 640px)
           width: 100%
+  &.contact-form
+    min-heighT: 100vh
+    background: $dark
+    color: white
+    form
+      padding: 20px
+      width: 100%
+      max-width: 960px
+      text-align: left
+      button
+        padding: 10px 40px
+        color: white
+        border: 2px solid white
+        background: none
+        outline: 0
+        transition: .15s ease-in-out
+        font-weight: 700
+        &:hover
+          background: white
+          color: $dark
+      .field
+        width: 100%
+        input[type='text'],
+        input[type='email']
+          width: 100%
+          padding: 10px 5px
+          outline: none
+          border: 2px solid lighten($dark, 50%)
+          display: block
+          float: left
+          transition: .15s ease-in-out
+          margin: 10px 0
+          &:focus
+            background: #f3f3f3
+      textarea
+        width: 100%
+        max-width: 100%
+        min-height: 300px
+        outline: none
+        border: 2px solid lighten($dark, 50%)
+        padding: 10px 5px
+        transition: .15s ease-in-out
+        margin: 10px 0
+        &:focus
+          background: #f3f3f3
 
 .footer
   text-align: center

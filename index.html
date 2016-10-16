@@ -23,6 +23,7 @@
     <ul class="links" >
         <li><a href="index.html" class="active" >Home</a></li>
         <li><a href="work.html">Work</a></li>
+        <li><a href="contact.html">Contact</a></li>
     </ul>
     <div class="footer">
         <a href="mailto:samuel.janes@icloud.com">Email Me</a>
@@ -39,8 +40,10 @@
 <div class="content" id="content">
     <div id="content-wrapper">
         <div class="section center--text flex center--items vertiz--align column hero">
-            <h1>Samuel Janes</h1>
-            <p>Front-end And Back-end Web Developer</p>
+            <div class="wrapper hero-wrapper">
+                <h1 class="logo" >Samuel <span>Janes</span></h1>
+                <p>Front-end And Back-end Web Developer</p>
+            </div>
         </div>
         <div class="section center--text flex center--items column about" id="about">
             <div class="wrapper no-padding">
@@ -85,10 +88,11 @@
 
 <script>
 
-
     $(".content").scroll( function(){
         var windowScroll = $(".content").scrollTop();
         var aboutOffset = $("#about").offset().top;
+
+        $(".hero-wrapper").attr("style", "transform: translate( 0%,  " + windowScroll / 4.5 + "%);");
 
         if(windowScroll > aboutOffset ){
             var SkillsBar = $(".skills").find(".skill-bar");
